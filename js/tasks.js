@@ -91,8 +91,8 @@
 //     let sum = 0;
 //     for (let i = 2; i <= number; i++) {
 //         if (i % 2 === 0) {
-//             sum += i; 
-//         } 
+//             sum += i;
+//         }
         
 //     }
 //     return sum;
@@ -106,12 +106,80 @@
 //     let sum = 2;
 //     for (let i = 4; i <= number; i += 2) {
 //         if (i % 2 !== 0) continue; {
-//             sum += i; 
-//         } 
+//             sum += i;
+//         }
         
 //     }
 //     return sum;
 // }
 
 // const res1 = catculateEvenTotal(20);
+// console.log("🚀 ~ res1:", res1);
+
+/** 11. Напиши цикл for, який виводить у консоль браузера числа за зростанням від a до b, 
+ * але тільки якщо число кратне 5.
+*/
+// const a = 100;
+// const b = 20;
+// function showASCNumbers(a, b) {
+//     let temp = a;
+//     if (a > b) {
+//         console.log(a, b);
+//         a = b;
+//         b = temp;
+//         console.log(a, b);
+        
+//     }
+//     for (let i = a; i < b; i++) {
+//         if (i % 5 !== 0) continue; 
+//         console.log(i);
+//        } 
+// }
+// showASCNumbers(a, b);
+
+// АБО ЗАПИСАТИ ЗМІННІ ЧЕРЕЗ МОДУЛЬ МАТЕМАТИКИ
+// const a = 100;
+// const b = 20;
+// function showASCNumbers(a, b) {
+//     let min;
+//     let max;
+//     let x = Math.min(a, b),
+//     let y = Math.max(a, b);
+//         if (a > b) {
+//         min = b;
+//         max = min + Math.abs(a - b);
+//     }
+//     else {
+//         min = a;
+//         max = b;
+//     }
+//     console.log(min, max);
+    
+//     for (let i = a; i < b; i++) {
+//         if (i % 5 !== 0) continue; 
+//         console.log(i);
+//        } 
+// }
+// showASCNumbers(a, b);
+
+/** 12. Напиши скрипт, який підраховує суму всіх парних чисел, 
+ * які входять в діапазон чисел у змінних від min до max.
+ * Наприклад, якщо min=0, a max=5, то діапазон 0-5, і в ньому два 
+ * парних числа - 2 і 4, їх сума 6.
+  */
+// const min = 0;
+// const max = 5;
+// let total = 0;
+// function catculateEvenTotal(number) {
+//     let sum = 0;
+//     for (let i = 2; i <= number; i += 2) {
+//         if (i % 2 !== 0) continue; {
+//             sum += i;
+//         }
+        
+//     }
+//     return sum;
+// }
+
+// const res1 = catculateEvenTotal(5);
 // console.log("🚀 ~ res1:", res1);

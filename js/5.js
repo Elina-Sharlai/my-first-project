@@ -163,14 +163,15 @@ const lastUserNameChar = userName[userName.length - 1];
 
 let counter = 0;
 
-while (counter < 10) {
-    console.log(counter);
-    counter++;   
-}
+// while (counter < 10) {
+//     console.log(counter);
+//     counter++;   
+// }
 
 do {
+  ++counter;
   console.log(counter);
-    ++counter;   
-} while (counter > 10);
+  } while (counter > 10);
+
 
 
