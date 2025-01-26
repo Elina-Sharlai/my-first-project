@@ -43,19 +43,44 @@
     
 // }
 
-/**Напишіть у консоль числа від max до min за спаданням
+/**4. Напишіть у консоль числа від max до min за спаданням
  * Додати усі парні числа від min до max.
 */
-const min = 1;
-const max = 5;
-let sum =0;
-for (let i = max; i > min; i--) {
-   console.log(i);
-   
-    if (i % 2 !== 0) {
-    continue;
-    }
-    sum += i;
-    console.log("Парні числа, i");
-}
-console.log(sum);
+// const min = 110;
+// const max = 120;
+// let sum =0;
+// for (let i = max; i > min; i--) {
+//    console.log(i);
+//     if (i % 2 !== 0) {
+//     continue;
+//     }
+//     sum += i;
+//     console.log("Парні числа", i);
+// }
+// console.log(sum);
+
+/**5. Запитай користувача у модальному вікні, який із напоїв він бажає придбати - 
+ * "Чай", "Каву", або "Сік".
+ * Залежно від напою оголоси суму до сплати, використовуй switch.
+*/
+// const drink = prompt("Оберіть напій");
+// function orderDrink(drink) {
+//     let price = 0;
+//     switch (drink) {
+//         case "Кава":
+//             price = 60;
+//             break
+//         case "Чай":
+//             price = 30;
+//             break
+//         case "Сік":
+//             price = 50;
+//             break
+//         default:
+//             alert("Doesn't exist")
+//             break
+//     }
+//     return alert(`sum: ${price}грн`)
+    
+// }
+// orderDrink(drink);
