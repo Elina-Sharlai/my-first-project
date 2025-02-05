@@ -184,10 +184,10 @@
 
 // A has B bots in stock
 
-const companyName = "Cybergine Systems";
-const repairBots = 150;
-const defenceBots = 50;
+// const companyName = "Cybergine Systems";
+// const repairBots = 150;
+// const defenceBots = 50;
 
-const msg = `${companyName} has ${repairBots + defenceBots} bots in stock`; 
+// const msg = `${companyName} has ${repairBots + defenceBots} bots in stock`; 
 
-console.log("🚀 ~ msg:", msg);
+// console.log("🚀 ~ msg:", msg);
