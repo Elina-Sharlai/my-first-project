@@ -212,5 +212,3 @@ console.log("🚀 ~ totalFeedback:", totalFeedback);
 const entries = Object.entries(feedback);
 console.log("🚀 ~ entries:", entries);
 
-
-
