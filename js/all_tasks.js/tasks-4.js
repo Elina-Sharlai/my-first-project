@@ -158,7 +158,7 @@
 
 // for (const item of Object.keys(user)) {
 //   console.log((`${item}: ${user[item]}`));
-   
+
 // };
 
 /**
@@ -256,11 +256,11 @@
 /**Зробіть знижку 20% на всі фрукти у масиві. 
  * Надайте 1[] для кожного продукту
  */
-const fruits = [
-  { name: "apple", price: 200 },
-  { name: "orange", price: 300 },
-  { name: "grapes", price: 750 },
-];
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
 
 
 // function calculateTotalPrice(fruitArray) {
@@ -290,6 +290,64 @@ function calculateTotalPrice(fruitArray) {
 }
 
 
-console.log(calculateTotalPrice(fruits));
+// console.log(calculateTotalPrice(fruits));
+
+//   "Як масив масивів перетворити на масив об'єктів. Наприклад:
+// 1. Створюємо новий масив
+// 2. Перебираємо вихідний масив в циклі
+// 3. На кожній ітерації циклу беремо значення із вкладеного масиву 1 та вкладеного масиву 2 за індексом
+// 4. Створюємо обʼєкт із властивостями
+    //  { columnName_0: someValue_0 }
+// 5. Пушимо створений обʼєкт в новий масив
+
+// П.С.Має бути виконана умова рівності довжин вкладених масивів,
+// в інакшому випадку потрібно буде робити додаткові перевірки,
+    // щоб уникнути не правильних значень в середині обʼєктів"
+https://stackblitz.com/edit/vitejs-vite-cyhunmtq?file=src%2Fmain.js
+/**
+ * Маємо набір даних, який представлено у вигляді матриці
+ * Щоб перетворити масив масивів у масив об'єктів можна використати методи map та reduce
+ */
+
+
+// const data1 = [
+//   ['columnName_0', 'columnName_1', 'columnName_2'], // Імена стовпців
+//   ['someValue_0', 'someValue_1', 'someValue_2'], // Значення рядків
+//   ['otherValue_0', 'otherValue_1', 'otherValue_2'],
+// ];
+
+// const [headers, ...rows] = data1; // Розділяємо заголовки та рядки
+
+// const res1 = rows.map((row) =>
+//   Object.fromEntries(headers.map((key, index) => [key, row[index]]))
+// );
+
+// console.log(res1);
+
+/**
+ * Маємо набір даних, який представлено у вигляді обʼєкта
+ * з властивостями columns та values
+ * Для перетворення цієї структури в масив об'єктів
+ * можна використати map() та Object.fromEntries()
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+ */
+
+
+
+// const data2 = [
+//   {
+//     columns: ['columnName_0', 'columnName_1', 'columnName_2'],
+//     values: [
+//       ['someValue_0', 'someValue_1', 'someValue_2'],
+//       ['otherValue_0', 'otherValue_1', 'otherValue_2'],
+//     ],
+//   },
+// ];
+
+
+// const { columns, values } = data2[0];
+// const res2 = values.map((row) =>
+//   Object.fromEntries(columns.map((key, index) => [key, row[index]]))
+// );
 
 
