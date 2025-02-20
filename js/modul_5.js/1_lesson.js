@@ -343,20 +343,20 @@ const tweets = [
   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
 ];
 
-const tags = tweets;
-console.log("ORIGINAL:", tags);
-const updatedTweets = tweets.map((tweet, index, array) => {
-  return {
-    ...tweet, likes: tweet.likes + 1, tags:
-      [...tweet.tags.slice(0, tweet.tags.length - 1)]
-  };
-})
-console.log("🚀 ~ updatedTweets ~ updatedTweets:", updatedTweets);
+// const tags = tweets;
+// console.log("ORIGINAL:", tags);
+// const updatedTweets = tweets.map((tweet, index, array) => {
+//   return {
+//     ...tweet, likes: tweet.likes + 1, tags:
+//       [...tweet.tags.slice(0, tweet.tags.length - 1)]
+//   };
+// })
+// console.log("🚀 ~ updatedTweets ~ updatedTweets:", updatedTweets);
 
-// const tags = tweets.flatMap((tweet, index, array) => {
-//   return tweet.tags;
-// });
-// console.log(tags);
+const tags = tweets.flatMap((tweet, index, array) => {
+  return tweet.tags;
+});
+console.log(tags);
 
 // const updatedTweets = tweets.map((tweet, index, array) => {
 //   // tweet.likes += 1
@@ -377,7 +377,7 @@ fetch(url)
   })
   .then(data => {
     const tags = data.hits[0].tags.split(",");
-    // console.log("tags:", tags);
+    console.log("tags:", tags);
   });
 
 // "Як використовуються об'єкти і їх методи наприклад, при додаванні картки товару на сторінку.
