@@ -96,7 +96,16 @@ const allCars = [{
     amount: 6,
     price: 31660,
     onSale: false,
-  },];
+  },
+  {
+    make: "Ford",
+    model: "F-150",
+    type: "e-pickup",
+    amount: 1,
+    price: 70000,
+    onSale: true,
+  },
+];
 
 /** Нехай функція filterByPrice повертає масив автомобілів, 
  * ціна яких менша ніж значення параметра threshold */
@@ -175,9 +184,157 @@ const result = getCarsWithTypeAndPrice(allCars, "suv", 32000);
 // console.log("🚀 ~ result:", result);
 
 
-const numbers = [5, 10, 15, 20, 25, 0];
-const number = numbers.find(number => number === 20);
-console.log(number);
+// const numbers = [5, 10, 15, 20, 25, 0];
+// const number = numbers.find(number => number === 20);
+// // console.log(number);
 
 // Задачки для find - шукаємо машину за моделлю
+
+// console.table(allCars);
+
+const getCarByModel = (cars, model) => cars.find((car) => car.model === model && car.type === "e-pickup");
+
+
+// console.log(getCarByModel(allCars, "F-150"));
+// console.log(getCarByModel(allCars, "CX-9"));
+// console.log(getCarByModel(allCars, "Cayenne"));
+// console.table(getCarByModel(allCars, "F-150"));
+
+/**
+ * Шукаємо машину за типом кузова
+ */
+const getCarByType = (cars, type) => cars.find(car => car.type === type);
+
+// console.log(getCarByType(allCars, "sedan"));
+// console.log(getCarByType(allCars, "truck"));
+// console.log(getCarByType(allCars, "tank"));
+
+/**
+ * Метод every
+ *
+ * - Поелементно перебирає оригінальний масив
+ * - Повертає true якщо всі елементи масиву задовольняють умову
+ */
+
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: true },
+//   { id: "player-2", name: "Poly", timePlayed: 370, points: 92, online: false },
+//   { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//   { id: "player-5", name: "Chelsy", timePlayed: 280, points: 48, online: true },
+// ];
+
+// console.table(players);
+
+// const isAllOnline = players.every((player) => {
+//   return player.online;
+// })
+// console.log("🚀 ~ isAllOnline ~ isAllOnline:", isAllOnline);
+
+/**
+ * Метод some
+ *
+ * - Поелементно перебирає оригінальний масив
+ * - Повертає true якщо хоча б один елемент масиву задовольняє умову
+ */
+
+// const isAnyOnline = players.some((player) => {
+//   return player.online;
+// })
+// console.log("🚀 ~ isAnyOnline ~ isAnyOnline:", isAnyOnline);
+
+// const anyHardcorePlayers = players.some(player => {
+//   return player.timePlayed > 400;
+// });
+// console.log("anyHardcorePlayers: ", anyHardcorePlayers);
+
+/**
+ * Метод reduce
+ *
+ * - Поелементно перебирає оригінальний масив
+ * - Значення, що повертається, залежить від розробника
+ */
+
+const numbers = [5, 10, 15, 20, 25];
+
+const total = numbers.reduce((acc, number, index, array) => {
+  // console.log(acc);
+  // console.log(number);
+  return (acc += number);
+}, 0);
+// console.log("🚀 ~ total ~ total:", total);
+
+// const total = numbers.reduce((acc, number) => (acc += number), 0);
+
+/**
+ * Рахуємо загальну зарплату
+ */
+
+const salary = {
+  mango: 100,
+  poly: 50,
+  ajax: 150,
+};
+
+const totalSalary = Object.values(salary).reduce((acc, salary) => {
+  return acc += salary;
+})
+// console.log("🚀 ~ totalSalary:", totalSalary);
+
+/**
+ * Рахуємо загальну кількість годин
+ */
+
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
+  { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
+];
+
+// console.table(players);
+
+const totalTimePlayed = players.reduce((acc, player) => acc += player.timePlayed, 0)
+// console.log("🚀 ~ totalTimePlayed ~ totalTimePlayed:", totalTimePlayed);
+
+/**
+ * Рахуємо загальну суму товарів кошика
+ */
+const cart = [
+  { label: "Apples", price: 100, quantity: 2 },
+  { label: "Bananas", price: 120, quantity: 3 },
+  { label: "Lemons", price: 70, quantity: 4 },
+];
+
+// console.table(cart);
+
+const totalSumInCart = cart.reduce((acc, {price, quantity}) => acc += (price * quantity), 0);
+console.log("🚀 ~ totalSumInCart ~ totalSumInCart:", totalSumInCart);
+
+
+// const url =
+//   "https://pixabay.com/api/?key=15249615-5ccf49bef51d4f01888f64cb2&q=yellow+flowers&image_type=photo&per_page=9";
+
+// fetch(url)
+//   .then(resp => {
+//     return resp.json();
+//   })
+//   .then(data => {
+//     const images = data.hits;
+//     const markup = images.reduce((str, image) => {
+// return str += `<li class="item">
+//         <img
+//         class="gallery-img"
+//         src="${image.previewURL}"
+//         alt="${image.tags}"
+//         width="${image.previewWidth}"
+//         height="${image.previewHeight}"
+//         />
+        
+//       </li>`
+//     }, '')
+    //  document.querySelector(".gallery").insertAdjacentHTML("beforeend", markup);
+    
+  // });
 
