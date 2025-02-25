@@ -11,7 +11,7 @@
 
 class Car{
     static description = "I'm only for school drive";
-    static counter = 0;
+    static #counter = 0;
 
     #model;
     #brand;
@@ -22,8 +22,11 @@ class Car{
         
         Car.setCountOfInstanses();
     }
+    static showCounter() {
+    // console.log(this.#counter);
+  }
       static setCountOfInstanses() {
-          Car.counter += 1;
+          Car.#counter += 1;
     }
     get brand() {
         return this.#brand;
@@ -54,24 +57,24 @@ class Car{
 
 
 const instanceAudi = new Car("Audi", "A5", 30_000);
-console.log(Car.description);
-console.log("🚀 ~ instanceAudi.withoutGetBrand():", instanceAudi.withoutGetBrand())
-console.log("🚀 ~ instanceAudi.brand:", instanceAudi.brand);
+// console.log(Car.description);
+// console.log("🚀 ~ instanceAudi.withoutGetBrand():", instanceAudi.withoutGetBrand())
+// console.log("🚀 ~ instanceAudi.brand:", instanceAudi.brand);
 instanceAudi.brand = "Zaz";
 
-console.log(instanceAudi.brand = "AUDI");
+// console.log(instanceAudi.brand = "AUDI");
 const instanceNissan = new Car("Nissan", "GT-R", 40_000);
 const instanceCadillac = new Car("Cadillac", "ATS", 10_000);
 const printedAudi = instanceAudi.print();
 const printedNissan = instanceNissan.print();
 const printedCadillac = instanceCadillac.print();
-console.log(printedAudi);
+// console.log(printedAudi);
 // console.log(printedNissan);
 // console.log(printedCadillac);
 instanceAudi.makeDiscount("10%")
 const res1 = instanceAudi.print();
-console.log("🚀 ~ res1:", res1);
-console.log(Car.counter);
+// console.log("🚀 ~ res1:", res1);
+Car.showCounter()
 
 
 // Недопустимий код!
@@ -131,4 +134,45 @@ const mango = new User1({
  *  - Конструктор дочірнього класу (super)
  *  - Методи дочірнього класу
  */
+class Hero {
+constructor({name = "hero", exp = 0}) {
+    this.name = name;
+    this.exp = exp;   
+    }
+    gainExp(amount) {
+    this.exp += amount;
+  }
+}
+class Warrior extends Hero {
+  constructor({ weapon, ...params }) {
+    super(params);
+    this.weapon = weapon;
+  }
+  attack() {
+    console.log(`${this.name} attacks by ${this.weapon}`);
+  }
+  gainExp(amount) {
+    this.exp += amount * 1.2;
+  }
+}
 
+class Mage extends Hero {
+  constructor({ spells, ...params }) {
+    super(params);
+    this.spells = spells;
+  }
+  cast() {
+    console.log(`${this.name} is casting a spell ${this.spells}`);
+  }
+}
+
+const warriorOptions = { name: "Conan", exp: 100, weapon: "Axe" };
+const conan = new Warrior(warriorOptions);
+conan.attack();
+conan.gainExp(20);
+console.log("conan:", conan);
+
+const dambldor = new Mage({ name: "Dambldor", exp: 80, spells: "fireball" });
+dambldor.cast();
+dambldor.gainExp(30);
+console.log("dambldor:", dambldor);
