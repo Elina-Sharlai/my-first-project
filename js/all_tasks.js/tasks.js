@@ -167,19 +167,79 @@
  * Наприклад, якщо min=0, a max=5, то діапазон 0-5, і в ньому два 
  * парних числа - 2 і 4, їх сума 6.
   */
-// const min = 0;
-// const max = 5;
-// let total = 0;
-// function catculateEvenTotal(number) {
-//     let sum = 0;
-//     for (let i = 2; i <= number; i += 2) {
-//         if (i % 2 !== 0) continue; {
-//             sum += i;
-//         }
+const min = 0;
+const max = 5;
+let total = 0;
+function catculateEvenTotal(number) {
+    let sum = 0;
+    for (let i = 2; i <= number; i += 2) {
+        if (i % 2 !== 0) continue; {
+            sum += i;
+        }
         
-//     }
-//     return sum;
-// }
+    }
+    return sum;
+}
 
-// const res1 = catculateEvenTotal(5);
+const res1 = catculateEvenTotal(5);
 // console.log("🚀 ~ res1:", res1);
+
+const points = 5000;
+
+if (points <= 500) {
+   console.log("Level 1");
+} else if (points > 500 && points <= 1500){
+   console.log("Level 2");
+}else if (points > 1500 && points <= 3500){
+    console.log("Level 3");
+}
+else {
+    // console.log("Level 4");
+}
+
+function checkStorage(available, ordered) {
+    if (ordered === 0)
+     {
+        return "There are no products in the order!";
+    }
+        if (available < ordered)
+     {
+        return "Your order is too large, there are not enough items in stock!";
+    }
+        else {
+        return "The order is accepted, our manager will contact you";
+}
+}
+
+// console.log(checkStorage(100, 50));
+// console.log(checkStorage(100, 130));
+// console.log(checkStorage(70, 0));
+// console.log(checkStorage(200, 20));
+// console.log(checkStorage(200, 250));
+// console.log(checkStorage(150, 0));
+// console.log(checkStorage(80, 80));
+
+
+
+function formatMessage(message, maxLength) {
+	if (message.length <= maxLength) {
+		return message;
+	} else {
+		return `${message.slice(0, maxLength)}...`;
+	}
+}
+
+// console.log(formatMessage("Curabitur ligula sapien", 16));
+
+function checkPassword(password) {
+    const correctPassword = "jqueryismyjam";
+    const truePass = "Access granted";  
+    const falsePass = "Access denied, wrong password!";
+    const pass = password === correctPassword ? truePass : falsePass;
+    return pass;
+    }
+// console.log(checkPassword("jqueryismyjam"));
+// console.log(checkPassword("angul4r1sl1f3"));
+// console.log(checkPassword("r3actsux"));
+
+
