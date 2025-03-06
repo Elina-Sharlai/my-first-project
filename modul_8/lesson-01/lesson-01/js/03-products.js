@@ -46,7 +46,7 @@ const products = [
 const loader = document.querySelector(".loader-wrapper");
 setTimeout(() => {
   loader.classList.add("is-hidden");
-}, 500);
+}, 5000);
 
 const container = document.querySelector(".products");
 // Render
@@ -70,7 +70,7 @@ function createCardsMarkup(cards) {
     })
     .join("");
 }
-console.log(products);
+
 
 function handlerProductClick(event) {
   // click on ul

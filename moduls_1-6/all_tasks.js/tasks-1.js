@@ -185,37 +185,37 @@ const values = [2, 17, 94, 1, 23, 37];
 let min;
 
 
-// function findMinNum(numbers) {
-//     let minNum = numbers[0];
-//     for (let i = 1; i < numbers.length; i++) {
-//         const currentNnumber = numbers[i];
+function findMinNum(numbers) {
+    let minNum = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        const currentNnumber = numbers[i];
        
-//         if (currentNnumber < minNum) {
-//             minNum = currentNnumber;
-//         }
-//     }
-//     return minNum;
-// }
+        if (currentNnumber < minNum) {
+            minNum = currentNnumber;
+        }
+    }
+    return minNum;
+}
 
-// min = findMinNum(values);
-// console.log("🚀 ~ min:", min);
+min = findMinNum(values);
+console.log("🚀 ~ min:", min);
 
 //  Або таке рішення задачі - розпилення масиву на елементи оператором spread
 
-// console.log("🚀 ~ Math.min(...values):", Math.min(...values));
+console.log("🚀 ~ Math.min(...values):", Math.min(...values));
 
 /** */
 
-// function getCommonElements(array1, array2) {
-//     const newArray = [];
-//     for (let i = 0; i < array1.length; i++) {
-//         if (array2.includes(array1[i])) {
-//             newArray.push(array1[i]);
-//         }
+function getCommonElements(array1, array2) {
+    const newArray = [];
+    for (let i = 0; i < array1.length; i++) {
+        if (array2.includes(array1[i])) {
+            newArray.push(array1[i]);
+        }
         
-//     }
-//     console.log(newArray);
-// }
+    }
+    console.log(newArray);
+}
 
-// getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
-// getCommonElements([1, 2, 3], [2, 1, 17, 19]);
+getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
+getCommonElements([1, 2, 3], [2, 1, 17, 19]);
