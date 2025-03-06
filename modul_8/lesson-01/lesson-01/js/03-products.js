@@ -70,6 +70,7 @@ function createCardsMarkup(cards) {
     })
     .join("");
 }
+console.log(products);
 
 function handlerProductClick(event) {
   // click on ul
@@ -87,9 +88,11 @@ function handlerProductClick(event) {
     <div class="modal">
       <img src="${product.img}" alt="${product.desc}" />
       <h3>${product.name}</h3>
-      <h4>${product.price}</h4>
+      <h4>${product.price} uah</h4>
       <p>${product.description}</p>
     </div>`);
 
   instance.show();
 }
+
+
